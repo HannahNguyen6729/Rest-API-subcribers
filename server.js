@@ -14,4 +14,8 @@ db.once("open", () => console.log("connected to database"));
 //let server except json
 app.use(express.json());
 
+//Routes
+const subscribersRouter = require("./routes/subscribersRouter");
+app.use("/subscribers", subscribersRouter);
+
 app.listen(3000, () => console.log("listening on port 3000"));
